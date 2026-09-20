@@ -4,7 +4,7 @@ html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background:
 body { font-family: Arial, 'Microsoft YaHei', sans-serif; user-select: none; -webkit-user-select: none; touch-action: pan-y; }
 button { font: inherit; }
 .presentation { width: 100vw; height: 100dvh; display: grid; place-items: center; }
-.stage { position: relative; width: min(100vw, 177.7778dvh); height: min(100dvh, 56.25vw); aspect-ratio: 16 / 9; overflow: hidden; background: var(--paper); box-shadow: 0 0 72px rgba(0,0,0,.45); }
+.stage { position: relative; width: min(100vw, 177.7778dvh); height: min(100dvh, 56.25vw); aspect-ratio: 16 / 9; overflow: hidden; background: var(--paper); box-shadow: 0 0 72px rgba(0,0,0,.45); container-type: size; }
 .deck-slide { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: var(--paper); color: var(--ink); opacity: 0; transform: translateX(2%); transition: opacity var(--duration) ease, transform var(--duration) cubic-bezier(.2,.75,.25,1); pointer-events: none; }
 .deck-slide.is-active { opacity: 1; transform: translateX(0); z-index: 1; pointer-events: auto; }
 .deck-slide.is-hidden { visibility: hidden; }
@@ -484,4 +484,37 @@ button:focus-visible { outline: 2px solid #55d8df; outline-offset: 3px; }
   .solution-detail .loop-track > div { min-height: 62px; padding-top: 8px; }
   .solution-detail .timeline-items div { min-height: 85px; padding-top: 8px; padding-bottom: 8px; }
   .solution-detail .solution-footer { min-height: 38px; padding-top: 2%; padding-bottom: 2%; }
+}
+
+/* Medium 16:9 stage: common browser-window size around 1056 x 594. */
+@container (min-height: 501px) and (max-height: 700px) {
+  .overview-detail .overview-pipeline > div { min-height: 78px; padding-top: 3%; padding-bottom: 3%; }
+  .overview-detail .overview-metrics div { padding-top: 2.5%; padding-bottom: 2.5%; }
+  .overview-detail .distribution-panel, .overview-detail .ownership-panel { min-height: 280px; }
+  .overview-detail .distribution-body { padding-top: 5%; padding-bottom: 5%; }
+  .overview-detail .quality-donut { width: 130px; }
+  .overview-detail .ownership-panel li { padding-top: 8px; padding-bottom: 8px; }
+  .overview-detail .result-stamp { margin-top: 4%; padding-top: 3%; padding-bottom: 3%; }
+
+  .evidence-detail .evidence-lead > div { min-height: 78px; padding-top: 3%; padding-bottom: 3%; }
+  .evidence-detail .evidence-grid { margin-top: 2.3%; }
+  .evidence-detail .iteration-section, .evidence-detail .validation-section { min-height: 155px; padding-top: 1.4%; }
+  .evidence-detail .kappa-row { margin-top: 2.5%; }
+  .evidence-detail .kappa-row > div { min-height: 52px; }
+  .evidence-detail .track-results { margin-top: 2%; }
+  .evidence-detail .track-results span { padding-top: 8px; padding-bottom: 8px; }
+  .evidence-detail .validation-numbers { margin-top: 3%; }
+  .evidence-detail .validation-numbers div { min-height: 62px; padding-top: 10px; }
+  .evidence-detail .validation-section p { margin-top: 2.5%; }
+  .evidence-detail .ocr-discovery { min-height: 160px; margin-top: 2.4%; padding-top: 2.2%; padding-bottom: 2.2%; }
+  .evidence-detail .ocr-metrics div { padding-top: 8px; padding-bottom: 8px; }
+
+  .solution-detail .dimension-system > div { min-height: 100px; padding-top: 3.5%; padding-bottom: 3.5%; }
+  .solution-detail .method-loop { margin-top: 2.3%; }
+  .solution-detail .loop-label { padding-top: 2.5%; padding-bottom: 2.5%; }
+  .solution-detail .loop-track > div { min-height: 76px; padding-top: 9px; }
+  .solution-detail .delivery-timeline { margin-top: 2.3%; padding-top: 1.4%; }
+  .solution-detail .timeline-items { margin-top: 1.2%; }
+  .solution-detail .timeline-items div { min-height: 80px; padding-top: 9px; padding-bottom: 9px; }
+  .solution-detail .solution-footer { min-height: 60px; margin-top: 2.3%; padding-top: 2%; padding-bottom: 2%; }
 }
