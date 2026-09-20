@@ -283,10 +283,10 @@ button:focus-visible { outline: 2px solid #55d8df; outline-offset: 3px; }
   .deck-slide[data-slide="5"] .fit-row { padding-top: .2%; padding-bottom: .2%; }
   .deck-slide[data-slide="5"] .solution-flow { padding-top: .5%; padding-bottom: .5%; }
 
-  .deck-slide[data-slide="6"] .experience-banner { padding-top: 1%; padding-bottom: 1%; }
-  .deck-slide[data-slide="6"] .process-line { margin-top: 2%; margin-bottom: 1%; }
-  .deck-slide[data-slide="6"] .connection { padding-top: 1%; padding-bottom: 1%; }
-  .deck-slide[data-slide="6"] .quote-line { margin-top: 1%; }
+  .deck-slide[data-slide="7"] .experience-banner { padding-top: 1%; padding-bottom: 1%; }
+  .deck-slide[data-slide="7"] .process-line { margin-top: 2%; margin-bottom: 1%; }
+  .deck-slide[data-slide="7"] .connection { padding-top: 1%; padding-bottom: 1%; }
+  .deck-slide[data-slide="7"] .quote-line { margin-top: 1%; }
 }
 
 /* Slides 3-5: dense project narrative for the internship defense. */
@@ -526,3 +526,112 @@ button:focus-visible { outline: 2px solid #55d8df; outline-offset: 3px; }
 }
 
 .overview-detail .ownership-panel .result-stamp { margin-top: auto; }
+
+/* Slide 6: supporting work beyond the main quality-grading project. */
+.support-lead {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  border-top: 2px solid var(--blue);
+  border-bottom: 1px solid var(--line);
+}
+.support-lead > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 2.1% 2.6%;
+}
+.support-lead > div + div { border-left: 1px solid var(--line); }
+.support-lead b,
+.support-lead strong { color: var(--navy); font-size: clamp(12px, 1.08vw, 18px); }
+.support-lead span { color: var(--muted); font-size: clamp(9px, .82vw, 14px); }
+.support-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2.2%;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.support-grid section {
+  min-height: 176px;
+  padding: 3.8% 6% 3.2%;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.support-grid section:nth-child(3n) { border-right: 0; }
+.support-grid section:nth-child(n+4) { border-bottom: 0; }
+.support-grid section:nth-child(2),
+.support-grid section:nth-child(5) { background: #f7fafb; }
+.support-grid section > span { color: var(--blue); font-size: clamp(9px, .82vw, 14px); font-weight: 800; }
+.support-grid h3 { margin: 7px 0 8px; color: var(--navy); font-size: clamp(13px, 1.22vw, 21px); }
+.support-grid p { margin: 0; color: var(--muted); font-size: clamp(9px, .86vw, 15px); line-height: 1.5; }
+.support-grid small { display: block; margin-top: 9px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--blue); font-size: clamp(8px, .74vw, 12px); font-weight: 700; }
+.support-outcome {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto 1.25fr 1fr;
+  gap: 18px;
+  align-items: center;
+  margin-top: 2.2%;
+  padding: 2% 2.6%;
+  background: var(--navy);
+  color: #fff;
+}
+.support-outcome > span { color: #9de3e3; font-size: clamp(8px, .76vw, 13px); font-weight: 800; }
+.support-outcome > div { display: flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; }
+.support-outcome b { font-size: clamp(8px, .76vw, 13px); }
+.support-outcome i { color: #9de3e3; font-style: normal; }
+.support-outcome > strong { color: #ff7777; font-size: clamp(9px, .88vw, 15px); line-height: 1.35; }
+
+@media (min-width: 761px) and (min-height: 701px) {
+  .support-detail .support-grid section { min-height: 205px; padding-top: 5%; padding-bottom: 4.5%; }
+  .support-detail .support-outcome { min-height: 70px; }
+}
+
+@container (min-height: 501px) and (max-height: 700px) {
+  .support-detail .support-lead > div { padding-top: 1.6%; padding-bottom: 1.6%; }
+  .support-detail .support-grid { margin-top: 1.6%; }
+  .support-detail .support-grid section { min-height: clamp(150px, 30cqh, 190px); padding-top: 3%; padding-bottom: 2.5%; }
+  .support-detail .support-grid h3 { margin-top: 4px; margin-bottom: 5px; }
+  .support-detail .support-grid small { margin-top: 5px; padding-top: 5px; }
+  .support-detail .support-outcome { margin-top: 1.6%; padding-top: 1.5%; padding-bottom: 1.5%; }
+}
+
+@media (max-width: 760px), (max-height: 500px) {
+  .support-lead > div { gap: 7px; padding: 1.2% 1.8%; }
+  .support-lead b, .support-lead strong { font-size: 7px; }
+  .support-lead span { font-size: 5px; }
+  .support-grid { margin-top: 1%; }
+  .support-grid section { min-height: clamp(69px, 28cqh, 112px); padding: 2% 4% 1.5%; }
+  .support-grid section > span { font-size: 5px; }
+  .support-grid h3 { margin: 2px 0 3px; font-size: 7px; }
+  .support-grid p { font-size: 4.5px; line-height: 1.3; }
+  .support-grid small { margin-top: 3px; padding-top: 2px; font-size: 4px; }
+  .support-outcome { gap: 7px; margin-top: 1%; padding: 1.1% 1.8%; }
+  .support-outcome > span,
+  .support-outcome b,
+  .support-outcome > strong { font-size: 5px; }
+  .support-outcome > div { gap: 3px; }
+}
+
+@media (max-width: 500px) and (min-height: 501px) {
+  .support-lead > div { gap: 4px; padding: .8% 1.2%; }
+  .support-lead b, .support-lead strong { font-size: 4px; }
+  .support-lead span { font-size: 3px; }
+  .support-grid { margin-top: .7%; }
+  .support-grid section { min-height: 41px; padding: 1.2% 2.5% 1%; }
+  .support-grid section > span { font-size: 3px; }
+  .support-grid h3 { margin: 1px 0; font-size: 4px; }
+  .support-grid p { font-size: 2.7px; }
+  .support-grid small { margin-top: 1px; padding-top: 1px; font-size: 2.5px; }
+  .support-outcome { gap: 4px; margin-top: .7%; padding: .7% 1.2%; }
+  .support-outcome > span,
+  .support-outcome b,
+  .support-outcome > strong { font-size: 3px; }
+  .support-outcome > div { gap: 2px; }
+}

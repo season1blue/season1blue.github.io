@@ -1,5 +1,5 @@
 (() => {
-  const total = 13;
+  const total = 14;
   const stage = document.getElementById('stage');
   const previousButton = document.getElementById('previous');
   const nextButton = document.getElementById('next');
