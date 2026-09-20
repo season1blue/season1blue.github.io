@@ -307,8 +307,8 @@ button:focus-visible { outline: 2px solid #55d8df; outline-offset: 3px; }
 .overview-metrics b { color: var(--navy); font-size: clamp(19px, 2.2vw, 38px); line-height: 1; }
 .overview-metrics span { margin-top: 7px; color: var(--muted); font-size: clamp(9px, .86vw, 15px); }
 .overview-bottom { position: relative; z-index: 1; display: grid; grid-template-columns: .95fr 1.05fr; gap: 4%; }
-.distribution-panel, .ownership-panel { min-height: 250px; }
-.distribution-body { display: grid; grid-template-columns: 148px 1fr; gap: 8%; align-items: center; padding: 4% 2%; }
+.distribution-panel, .ownership-panel { min-height: 250px; display: flex; flex-direction: column; }
+.distribution-body { flex: 1; display: grid; grid-template-columns: 148px 1fr; gap: 8%; align-items: center; padding: 4% 2%; }
 .quality-donut { width: 148px; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(#0a6b9c 0 25.09%, #20aeb1 25.09% 54.95%, #a9c7cd 54.95% 100%); position: relative; }
 .quality-donut::after { content: '7000万'; position: absolute; inset: 25%; display: grid; place-items: center; border-radius: 50%; background: #fff; color: var(--navy); font-size: clamp(11px, 1vw, 17px); font-weight: 800; }
 .distribution-copy { display: grid; gap: 9px; }
@@ -323,6 +323,7 @@ button:focus-visible { outline: 2px solid #55d8df; outline-offset: 3px; }
 .ownership-panel li b { color: var(--blue); font-size: clamp(10px, .9vw, 15px); }
 .ownership-panel li span { color: var(--muted); font-size: clamp(9px, .84vw, 14px); }
 .result-stamp { display: flex; align-items: center; gap: 18px; margin-top: 4%; padding: 3% 4%; border-left: 4px solid var(--cyan); background: #edf7f8; }
+.ownership-panel .result-stamp { margin-top: auto; }
 .result-stamp span { color: var(--muted); font-size: clamp(9px, .82vw, 14px); }
 .result-stamp b { color: var(--red); font-size: clamp(13px, 1.25vw, 21px); }
 
@@ -492,7 +493,7 @@ button:focus-visible { outline: 2px solid #55d8df; outline-offset: 3px; }
   .overview-detail .overview-metrics div { padding-top: 2.5%; padding-bottom: 2.5%; }
   .overview-detail .distribution-panel, .overview-detail .ownership-panel { min-height: 280px; }
   .overview-detail .distribution-body { padding-top: 5%; padding-bottom: 5%; }
-  .overview-detail .quality-donut { width: 130px; }
+  .overview-detail .quality-donut { width: 148px; }
   .overview-detail .ownership-panel li { padding-top: 8px; padding-bottom: 8px; }
   .overview-detail .result-stamp { margin-top: 4%; padding-top: 3%; padding-bottom: 3%; }
 
@@ -518,3 +519,5 @@ button:focus-visible { outline: 2px solid #55d8df; outline-offset: 3px; }
   .solution-detail .timeline-items div { min-height: 80px; padding-top: 9px; padding-bottom: 9px; }
   .solution-detail .solution-footer { min-height: 60px; margin-top: 2.3%; padding-top: 2%; padding-bottom: 2%; }
 }
+
+.overview-detail .ownership-panel .result-stamp { margin-top: auto; }
