@@ -13,8 +13,9 @@ button { font: inherit; }
 .rail-paper { display: flex; }
 .rail-paper .rail { position: relative; z-index: 2; }
 .paper-stage { position: relative; flex: 1; min-width: 0; height: 100%; overflow: hidden; background: #fff; }
-.paper-stage img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: fill; }
-.paper-summary img { top: -10.8%; height: 110.8%; }
+.paper-stage { display: grid; place-items: center; }
+.paper-stage img { position: static; display: block; width: 100%; height: auto; max-height: 100%; object-fit: contain; }
+.paper-summary::after { content: ''; position: absolute; z-index: 1; top: 4.8%; left: 0; right: 18%; height: 10.5%; background: #fff; pointer-events: none; }
 .content-slide { display: flex; }
 .rail { flex: 0 0 11%; min-width: 78px; display: flex; align-items: center; justify-content: center; padding-top: 8%; padding-bottom: 8%; background: var(--navy); color: #fff; }
 .rail span { writing-mode: vertical-rl; letter-spacing: .16em; font-size: clamp(14px, 1.55vw, 28px); font-weight: 700; }
